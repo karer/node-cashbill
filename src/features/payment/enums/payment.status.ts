@@ -4,7 +4,7 @@ export enum PaymentStatus {
   ABORT = 'Abort',
   FRAUD = 'Fraud',
   POSITIVE_AUTHORIZATION = 'PositiveAuthorization',
-  POSITIVE_FINISH = 'PositiveFinis',
+  POSITIVE_FINISH = 'PositiveFinish',
   NEGATIVE_FINISH = 'NegativeFinish',
   TIME_EXCEEDED = 'TimeExceeded',
   CRITICAL_ERROR = 'CriticalError'
