@@ -1,0 +1,53 @@
+{
+  "name": "cashbill",
+  "version": "1.0.0",
+  "description": "A TypeScript library for making payments through CashBill gateway.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "npm run clean:build",
+    "clean:build": "rimraf ./dist",
+    "build": "npm run clean:build && tsc",
+    "prettify": "prettier --write \"src/**/*.{js,ts,json}\"",
+    "lint": "eslint 'src/**/*.{js,ts}'",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "npm run prettify && npm run lint:fix",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "cashbill",
+    "cashbill api",
+    "cash bill"
+  ],
+  "homepage": "https://github.com/karer/node-cashbill",
+  "author": {
+    "name": "Kacper Geisheimer",
+    "email": "devkarer@gmail.com",
+    "url": "https://karermedia.pl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karer/node-cashbill"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "request-promise-native": "^1.0.8"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.7.4",
+    "@types/jest": "^24.0.23",
+    "@types/request-promise-native": "^1.0.17",
+    "@typescript-eslint/eslint-plugin": "^2.11.0",
+    "@typescript-eslint/parser": "^2.11.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.3"
+  }
+}
