@@ -4,6 +4,7 @@ import { CashBillError } from '../../error'
 import { Payment } from './interfaces/payment.interface'
 import { PaymentRequest } from './interfaces/payment-request.interface'
 import { PaymentResponse } from './interfaces/payment-response.interface'
+import * as diacritics from 'diacritics'
 
 export class PaymentModule extends LibModule {
   async get(paymentId: string): Promise<Payment> {
@@ -23,6 +24,8 @@ export class PaymentModule extends LibModule {
   }
 
   async create(payment: PaymentRequest): Promise<PaymentResponse> {
+    payment.title = diacritics.remove(payment.title)
+
     const fields = {
       ...payment,
       sign: this.getCreationSign(payment)
