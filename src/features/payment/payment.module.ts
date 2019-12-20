@@ -26,6 +26,10 @@ export class PaymentModule extends LibModule {
   async create(payment: PaymentRequest): Promise<PaymentResponse> {
     payment.title = diacritics.remove(payment.title)
 
+    if (payment.description) {
+      payment.description = diacritics.remove(payment.description)
+    }
+
     const fields = {
       ...payment,
       sign: this.getCreationSign(payment)
